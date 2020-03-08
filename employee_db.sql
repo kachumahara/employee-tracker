@@ -46,9 +46,31 @@ CREATE TABLE employee (
   PRIMARY KEY (id)
 );
 
+-- Creates new rows containing data all all named columns --
 INSERT INTO department(deptName)
-VALUES ();
+VALUES ("accounts");
+INSERT INTO department(deptName)
+VALUES ("enginerring");
+INSERT INTO department(deptName)
+VALUES ("admin");
+INSERT INTO department(deptName)
+VALUES ("security");
+
 INSERT INTO role(title, salary, dept_id)
-VALUES();
+VALUES ("accounts manager", 45000.00, 1);
+INSERT INTO role(title, salary, dept_id)
+VALUES ("engr manager", 40000.00, 2);
+INSERT INTO role(title, salary, dept_id)
+VALUES ("admin manager", 50000.00, 3);
+INSERT INTO role(title, salary, dept_id)
+VALUES ("security manager", 35000.00, 4);
+
 INSERT INTO employee(first_name, last_name, role_id, manager_id)
-VALUES();
+VALUES("natalia", "chibu", 1, 2);
+INSERT INTO employee(first_name, last_name, role_id, manager_id)
+VALUES("sean", "muna", 3, 4);
+INSERT INTO employee(first_name, last_name, role_id, manager_id)
+VALUES("amy", "bubu", 5, 6);
+INSERT INTO employee(first_name, last_name, role_id, manager_id)
+VALUES("mike", "esom", 7, 8);
+
