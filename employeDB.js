@@ -49,5 +49,5 @@ function start() {
     }
   });
 }
-console.log()
+
 // function to handle adding new employee
