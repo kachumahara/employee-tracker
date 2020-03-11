@@ -52,22 +52,22 @@ function runSearch() {
       viewRole();
     }
     else if (answer.action === "View Department") {
-      ViewDepartment();
+      viewDepartment();
     }
     else if (answer.action === "Add Employee") {
-      AddEmployee();
+      addEmployee();
     }
     else if (answer.action === "Add Role") {
-      AddRole();
+      addRole();
     }
     else if (answer.action === "Add Department") {
-      AddDepartment();
+      addDepartment();
     }
     else if ( answer.action === "Update Role") {
       updateRole();
     }
     else if (answer.action === "View Manager") {
-      ViewManager();
+      viewManager();
     }
     else {
       connection.end();
@@ -75,4 +75,60 @@ function runSearch() {
   })
 }
 
-// function to handle adding new employee
+// function to handle viewing employess
+function viewEmployee(){
+
+  .then(function(answer) {
+
+  })
+}
+
+// function to handle viewing Roles
+function viewRoles(){
+
+  .then(function(answer){
+
+  })
+}
+// function to handle viewing Department
+function viewDepartment(){
+
+  .then(function(answer){
+
+  })
+}
+// function to handle adding employees
+function addEmployee(){
+
+  .then(function(answer){
+
+  })
+}
+// function to handle add roles
+function addRole(){
+
+  .then(function(answer){
+
+  })
+}
+// function to handle add department
+function addDepartment(){
+
+  .then (function(answer){
+
+  })
+}
+// function to update role
+function updateRole(){
+
+  .then (function(answer){
+
+  })
+}
+// function to view manager
+function viewManager(){
+
+  .then(function(answer){
+    
+  })
+}
