@@ -21,33 +21,58 @@ var connection = mysql.createConnection({
 connection.connect(function(err) {
   if (err) throw err;
   //run the start function after the connection is made to prompt the user
-  start();
+  runSearch();
 });
 
 // function which prompst the user for what action they should take
-function start() {
+function runSearch() {
   inquirer
   .prompt({
-    name: "addOrViewOrUpdate",
+    name: "action",
     type: "list",
-    message: "Would you like to [ADD] an employee [VIEW] an employee [UPDATE] an employee?",
-    choices: ["ADD", "VIEW, UPDATE"]
+    message: "What would you like to do?",
+    choices: [
+      "View Employees",
+      "View Role",
+      "View Department",
+      "Add Employee",
+      "Add Role",
+      "Add Department",
+      "Update Role",
+      "View Manager"
+
+    ]
   })
   .then(function(annser) {
     // based on their answer, either call the add or the view or the update functions
-    if (answer.addOrViewOrUpdate === "ADD") {
-      addEmployee();
-    }
-    else if(answer.addOrViewOrUpdate === "VIEW") {
+    if (answer.action === "View Employees") {
       viewEmployee();
     }
-    else if (answer.addOrViewOrUpdate === "UPDATE") {
-      updateEmployee();
+    else if(answer.action === "View Roles") {
+      viewRole();
     }
-    else{
+    else if (answer.action === "View Department") {
+      ViewDepartment();
+    }
+    else if (answer.action === "Add Employee") {
+      AddEmployee();
+    }
+    else if (answer.action === "Add Role") {
+      AddRole();
+    }
+    else if (answer.action === "Add Department") {
+      AddDepartment();
+    }
+    else if ( answer.action === "Update Role") {
+      updateRole();
+    }
+    else if (answer.action === "View Manager") {
+      ViewManager();
+    }
+    else {
       connection.end();
     }
-  });
+  })
 }
 
 // function to handle adding new employee

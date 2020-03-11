@@ -12,7 +12,7 @@ CREATE TABLE department (
   -- Create numeric column called "id" which automatically increment its default value as rows are created--
   id INT(11) AUTO_INCREMENT NOT NULL,
   -- Make a string called "name" which cannot contain null --
-  deptName VARCHAR(30),
+  deptName VARCHAR(30) NOT NULL,
   PRIMARY KEY (id)
 );
 
@@ -21,7 +21,7 @@ CREATE TABLE role (
   -- Create numeric columm called "id" which automatically increment its default value as rows are created --
   id INT(11) AUTO_INCREMENT NOT NULL,
   -- Make a string called "title" --
-  title VARCHAR(30),
+  title VARCHAR(30) NOT NULL,
   -- Make a column called " salary" --
   salary DECIMAL NOT NULL,
   -- Make a numeric column "dept_id" --
@@ -36,13 +36,13 @@ CREATE TABLE employee (
   -- Create numeric column called "id" which automatically increment its default value as rows are created --
   id INT(11) AUTO_INCREMENT NOT NULL,
   -- Make a string column called "first_name" --
-  first_name VARCHAR(30),
+  first_name VARCHAR(30) NOT NULL,
   -- Make a string column called "last_name" --
-  last_name VARCHAR(30),
+  last_name VARCHAR(30) NOT NULL,
   -- Make a numeric column called "role_id"
   role_id INT(11) NOT NULL,
   -- Make a numeric colunm called "manager_id"
-  manager_id INT(11) NOT NULL,
+  manager_id INT(11) NULL,
   PRIMARY KEY (id)
 );
 
@@ -59,18 +59,34 @@ VALUES ("security");
 INSERT INTO role(title, salary, dept_id)
 VALUES ("accounts manager", 45000.00, 1);
 INSERT INTO role(title, salary, dept_id)
+VALUES ("payroll", 30000.00, 1);
+INSERT INTO role(title, salary, dept_id)
 VALUES ("engr manager", 40000.00, 2);
+INSERT INTO role(title, salary, dept_id)
+VALUES ("electrician", 25000.00, 2);
 INSERT INTO role(title, salary, dept_id)
 VALUES ("admin manager", 50000.00, 3);
 INSERT INTO role(title, salary, dept_id)
+VALUES ("hr", 35000.00, 3);
+INSERT INTO role(title, salary, dept_id)
 VALUES ("security manager", 35000.00, 4);
+INSERT INTO role(title, salary, dept_id)
+VALUES ("key holder", 25000.00, dept_id);
 
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("natalia", "chibu", 1, 2);
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("dennis", "lucas", 2, NULL);
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("sean", "muna", 3, 4);
 INSERT INTO employee(first_name, last_name, role_id, manager_id)
-VALUES("natalia", "chibu", 1, 2);
+VALUES ("john", "emeka", 4, NULL);
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("amy", "bubu", 5, 6);
 INSERT INTO employee(first_name, last_name, role_id, manager_id)
-VALUES("sean", "muna", 3, 4);
-INSERT INTO employee(first_name, last_name, role_id, manager_id)
-VALUES("amy", "bubu", 5, 6);
-INSERT INTO employee(first_name, last_name, role_id, manager_id)
-VALUES("mike", "esom", 7, 8);
+VALUES ("tracy", "eli", 6, NULL);
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("mike", "esom", 7, 8);
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("frank", "louis", 8, NULL);
 
